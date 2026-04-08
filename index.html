@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Student Portal</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #f4f6f8;
+    margin: 0;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Logo (original size) */
+.logo {
+    height: auto;
+    width: auto;
+    margin-right: 15px;
+}
+
+/* Title */
+.title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Main content */
+.container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.subtitle {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background: #007BFF;
+    color: white;
+    cursor: pointer;
+}
+
+.box {
+    display: none;
+    margin-top: 30px;
+}
+
+input {
+    padding: 10px;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+<div class="header">
+    <img src="logo.png" alt="Logo" class="logo">
+    <div class="title">Susipvan Higher Educational Center Gampaha</div>
+</div>
+
+<!-- Content -->
+<div class="container">
+    <div class="subtitle">Student Portal</div>
+
+    <button class="btn" onclick="openPortal()">Open Student Portal</button>
+
+    <div id="portalBox" class="box">
+        <h3>Enter Barcode Number</h3>
+        <input type="text" id="barcode" placeholder="Enter Barcode" maxlength="8">
+        <br><br>
+        <button class="btn" onclick="openPDF()">Submit</button>
+    </div>
+</div>
+
+<script>
+function openPortal() {
+    document.getElementById("portalBox").style.display = "block";
+}
+
+function openPDF() {
+    let code = document.getElementById("barcode").value;
+
+    if (code === "80500595") {
+        window.open("Student attendance record (simple)1.pdf", "_blank");
+    } else {
+        alert("Invalid Barcode Number!");
+    }
+}
+</script>
+
+</body>
+</html>
